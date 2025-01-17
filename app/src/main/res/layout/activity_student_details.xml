@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="100px"
+    android:orientation="vertical">
+    <ImageView
+        style="@style/DefaultMargin"
+        android:layout_marginTop="100px"
+        android:id="@+id/imageViewProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/default_profile"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Student Name -->
+    <TextView
+        style="@style/DefaultMargin"
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <!-- Student ID -->
+    <TextView
+        style="@style/DefaultMargin"
+        android:id="@+id/textViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: 12345"
+        android:textSize="16sp"/>
+
+    <!-- Active Status -->
+    <TextView
+        style="@style/DefaultMargin"
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone: 0523422342"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"/>
+    <TextView
+        style="@style/DefaultMargin"
+        android:id="@+id/textViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address: Haim Cohen 16 Petah Tikwa"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"/>
+    <CheckBox
+        style="@style/DefaultMargin"
+        android:id="@+id/checkBoxIsChecked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Is Checked?"/>
+    <!-- Edit Button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <Button
+        android:layout_marginBottom="100px"
+        android:id="@+id/buttonEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Edit Student"/>
+    </RelativeLayout>
+</LinearLayout>
