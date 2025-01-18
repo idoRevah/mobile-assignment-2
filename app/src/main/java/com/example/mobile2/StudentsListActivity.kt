@@ -43,10 +43,10 @@ class StudentsListActivity: AppCompatActivity() {
         // TODO: Initialize RecyclerView
         studentAdapter = StudentAdapter(studentsList) { student ->
             val intent = Intent(this, StudentDetailsActivity::class.java)
-//            intent.putExtra("selected_student", student)
+            intent.putExtra("selected_student", student)
             startActivity(intent)
-
         }
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = studentAdapter
 
@@ -57,14 +57,14 @@ class StudentsListActivity: AppCompatActivity() {
 //    }
     }
     // ???
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            val newStudent = data?.getSerializableExtra("new_student") as? Student
-            newStudent?.let {
-                studentsList.add(it)
-                studentAdapter.notifyItemInserted(studentsList.size - 1)
-            }
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == 1 && resultCode == RESULT_OK) {
+//            val newStudent = data?.getSerializableExtra("new_student") as? Student
+//            newStudent?.let {
+//                studentsList.add(it)
+//                studentAdapter.notifyItemInserted(studentsList.size - 1)
+//            }
+//        }
+//    }
 }
