@@ -15,10 +15,10 @@ class StudentsListActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         setContentView(R.layout.activity_students_list)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewStudents)
         val fabAddStudent = findViewById<FloatingActionButton>(R.id.fabAddStudent)
