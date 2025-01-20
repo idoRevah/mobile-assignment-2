@@ -15,6 +15,8 @@ class NewStudentActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         student = Student(id="a", address = "sdf", phone = "sf", isChecked = false, name="skdlf", profileImageId = 32 )
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         setContentView(R.layout.activity_new_student)
 
         val saveStudentButton = findViewById<Button>(R.id.buttonSave)

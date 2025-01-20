@@ -20,6 +20,8 @@ class StudentEditActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_details)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_student)
 
         student = intent.getParcelableExtra("selected_student", Student::class.java)
