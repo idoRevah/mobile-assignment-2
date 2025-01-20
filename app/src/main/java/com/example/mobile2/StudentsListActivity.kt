@@ -23,12 +23,81 @@ class StudentsListActivity: AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewStudents)
         val fabAddStudent = findViewById<FloatingActionButton>(R.id.fabAddStudent)
         studentsList.addAll(listOf(
-            Student(id = "002", name = "Alice Johnson", isChecked = true,phone = "0509534647", address = "Haim Cohen"),
-            Student(id = "005", name = "Alice Johnson", isChecked = true,phone = "0509534647", address = "Haim Cohen"),
+            Student(id = "000", name = "Israel Israeli", isChecked = true,phone = "0509534647", address = "Haim Cohen"),
+            Student(id = "111", name = "Alice Johnson", isChecked = false,phone = "0504560064", address = "HaZamir Hod Hasharon"),
+            Student(
+                id = "001",
+                name = "Luke Skywalker",
+                isChecked = false,
+                phone = "1234567890",
+                address = "Tatooine"
+            ),
+            Student(
+                id = "002",
+                name = "Bruce Wayne",
+                isChecked = true,
+                phone = "9876543210",
+                address = "Wayne Manor, Gotham City"
+            ),
+            Student(
+                id = "003",
+                name = "Clark Kent",
+                isChecked = false,
+                phone = "5558889999",
+                address = "Smallville, Kansas"
+            ),
+            Student(
+                id = "004",
+                name = "Tony Stark",
+                isChecked = true,
+                phone = "8885553333",
+                address = "Stark Tower, New York"
+            ),
+            Student(
+                id = "005",
+                name = "Darth Vader",
+                isChecked = true,
+                phone = "6660006666",
+                address = "Death Star, Space"
+            ),
+            Student(
+                id = "006",
+                name = "Sherlock Holmes",
+                isChecked = false,
+                phone = "2211899333",
+                address = "221B Baker Street, London"
+            ),
+            Student(
+                id = "007",
+                name = "James Bond",
+                isChecked = true,
+                phone = "0070070070",
+                address = "Everywhere around the globe"
+            ),
+            Student(
+                id = "008",
+                name = "Harry Potter",
+                isChecked = false,
+                phone = "9991110000",
+                address = "4 Privet Drive, Surrey"
+            ),
+            Student(
+                id = "009",
+                name = "Frodo Baggins",
+                isChecked = true,
+                phone = "1112223333",
+                address = "Bag End, Hobbiton"
+            ),
+            Student(
+                id = "010",
+                name = "Willy Wonka",
+                isChecked = false,
+                phone = "5551234567",
+                address = "Chocolate Factory, Candyland"
+            )
             ))
         Log.d("StudentsListActivity", "Student list size: ${studentsList.size}")
 
-        // TODO: Initialize RecyclerView
         studentAdapter = StudentAdapter(studentsList) { student ->
             val intent = Intent(this, StudentDetailsActivity::class.java)
             intent.putExtra("selected_student", student)
