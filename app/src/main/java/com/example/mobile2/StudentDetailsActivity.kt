@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
@@ -22,6 +23,10 @@ class StudentDetailsActivity: AppCompatActivity(
         setContentView(R.layout.activity_student_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = "Student Details"
+        }
+
         student = intent.getParcelableExtra("selected_student", Student::class.java)!!
 
         Log.d("student: ",student.toString());
@@ -80,5 +85,15 @@ class StudentDetailsActivity: AppCompatActivity(
         findViewById<TextView>(R.id.textViewPhone).text = "Phone: " + student.phone;
         findViewById<TextView>(R.id.textViewAddress).text = "Address: " + student.address;
         findViewById<CheckBox>(R.id.checkBoxIsChecked).isChecked = student.isChecked;
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()  // Navigate back
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

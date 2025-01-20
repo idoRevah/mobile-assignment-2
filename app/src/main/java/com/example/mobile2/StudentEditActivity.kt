@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,9 @@ class StudentEditActivity: AppCompatActivity() {
         setContentView(R.layout.activity_student_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = "Edit Student"
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_student)
 
         student = intent.getParcelableExtra("selected_student", Student::class.java)
@@ -69,6 +73,14 @@ class StudentEditActivity: AppCompatActivity() {
         finish()
     }
 
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()  // Navigate back
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 }
