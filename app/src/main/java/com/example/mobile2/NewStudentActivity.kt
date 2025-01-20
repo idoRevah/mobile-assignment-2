@@ -3,6 +3,7 @@ package com.example.mobile2
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -15,6 +16,11 @@ class NewStudentActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         student = Student(id="a", address = "sdf", phone = "sf", isChecked = false, name="skdlf", profileImageId = 32 )
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = "New Student"
+        }
         setContentView(R.layout.activity_new_student)
 
         val saveStudentButton = findViewById<Button>(R.id.buttonSave)
@@ -42,5 +48,15 @@ class NewStudentActivity: AppCompatActivity() {
         Log.d("intent: trying to save student1", student.toString())
         setResult(10, resultIntent)
         finish()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()  // Navigate back
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
