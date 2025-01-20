@@ -1,5 +1,6 @@
 package com.example.mobile2
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,9 +37,10 @@ class StudentAdapter ( private val studentList: MutableList<Student>,   // Data 
 
         holder.textViewName.text = student.name
         holder.textViewID.text = "ID: ${student.id}"
-        holder.imageViewProfile.setImageResource(student.profileImageId)
+//        holder.imageViewProfile.setImageResource(student.profileImageId)
         holder.checkBoxActive.isChecked = student.isChecked
-
+        holder.checkBoxActive.setOnCheckedChangeListener(null)
+        holder.checkBoxActive.isChecked = student.isChecked
         holder.checkBoxActive.setOnCheckedChangeListener { _, isChecked ->
             student.isChecked = isChecked
         }
@@ -47,4 +49,5 @@ class StudentAdapter ( private val studentList: MutableList<Student>,   // Data 
             onItemClick(student)
         }
     }
+
 }
