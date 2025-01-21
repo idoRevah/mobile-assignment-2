@@ -10,7 +10,6 @@ import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.log
 
 class StudentDetailsActivity: AppCompatActivity(
 
@@ -30,7 +29,7 @@ class StudentDetailsActivity: AppCompatActivity(
         student = intent.getParcelableExtra("selected_student", Student::class.java)!!
 
         Log.d("student: ",student.toString());
-        InitValues();
+        initValues();
 
         val checkBox: CheckBox = findViewById<CheckBox>(R.id.checkBoxIsChecked);
         checkBox.setOnClickListener {
@@ -43,6 +42,7 @@ class StudentDetailsActivity: AppCompatActivity(
 
 
         }
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == 100) { // 100 means DELETE
@@ -70,7 +70,7 @@ class StudentDetailsActivity: AppCompatActivity(
             Toast.makeText(this, "Action Canceled!", Toast.LENGTH_SHORT).show()
         }
 
-        InitValues()
+        initValues()
     }
 
     private fun openEditStudentPage() {
@@ -79,7 +79,7 @@ class StudentDetailsActivity: AppCompatActivity(
         startActivityForResult(intent, 80) // TODO: change this
     }
 
-    fun InitValues() {
+    private fun initValues() {
         findViewById<TextView>(R.id.textViewName).text = "Name: " + student.name;
         findViewById<TextView>(R.id.textViewID).text = "Id: " + student.id;
         findViewById<TextView>(R.id.textViewPhone).text = "Phone: " + student.phone;

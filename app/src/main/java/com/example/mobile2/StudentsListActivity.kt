@@ -114,6 +114,7 @@ class StudentsListActivity: AppCompatActivity() {
     }
 
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d("intent: somethingTriggered", resultCode.toString())
@@ -134,7 +135,7 @@ class StudentsListActivity: AppCompatActivity() {
         }
     }
 
-    fun updateStudent(stud: Student) {
+    private fun updateStudent(stud: Student) {
         val index = studentsList.indexOfFirst { it.id == stud.id }
 
         if (index != -1) {
@@ -143,7 +144,7 @@ class StudentsListActivity: AppCompatActivity() {
         }
     }
 
-    fun deleteStudent(stud: Student) {
+    private fun deleteStudent(stud: Student) {
         val index = studentsList.indexOfFirst { it.id == stud.id }
         Log.d("Delete Triggered, stud in index of",index.toString())
         if (index != -1) {
