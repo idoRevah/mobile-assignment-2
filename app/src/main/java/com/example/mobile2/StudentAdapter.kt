@@ -16,7 +16,6 @@ class StudentAdapter ( private val studentList: MutableList<Student>,   // Data 
 
 
     inner class StudentItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewProfile: ImageView = itemView.findViewById(R.id.imageViewProfile)
         val textViewName: TextView = itemView.findViewById(R.id.textViewName)
         val textViewID: TextView = itemView.findViewById(R.id.textViewID)
         val checkBoxActive: CheckBox = itemView.findViewById(R.id.checkBoxIsChecked)
@@ -37,7 +36,6 @@ class StudentAdapter ( private val studentList: MutableList<Student>,   // Data 
 
         holder.textViewName.text = student.name
         holder.textViewID.text = "ID: ${student.id}"
-//        holder.imageViewProfile.setImageResource(student.profileImageId)
         holder.checkBoxActive.isChecked = student.isChecked
         holder.checkBoxActive.setOnCheckedChangeListener(null)
         holder.checkBoxActive.isChecked = student.isChecked
