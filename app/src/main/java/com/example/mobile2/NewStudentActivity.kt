@@ -30,8 +30,6 @@ class NewStudentActivity: AppCompatActivity() {
             saveStud()
         }
 
-//        val intent = Intent(this, StudentDetailsActivity::class.java)
-//        intent.putExtra("selected_student", student)
     }
 
     private fun saveStud() {
